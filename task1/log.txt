@@ -1,0 +1,11 @@
+commit 481c5e919e509e4df2445e612bcd328f000e6a4e (HEAD -> master)
+Author: Ksenia <ksundelok@icloud.com>
+Date:   Wed Feb 7 21:54:06 2018 +0300
+
+    add status.txt
+
+commit b0dc4d7d19a9b53ae6b2756d5e75b0497c4144e9
+Author: Ksenia <ksundelok@icloud.com>
+Date:   Wed Feb 7 21:51:31 2018 +0300
+
+    add .gitignore
