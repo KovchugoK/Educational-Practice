@@ -18,7 +18,7 @@ var post1 = {
     hashTags: ["#top", "#brilliant"],
     likes: ['svetabylly', 'alfa_di']
 };
-var post2 = {
+/*var post2 = {
     id: "4",
     description: "discription",
     createdAt: new Date('2018-02-23T23:00:00'),
@@ -26,7 +26,7 @@ var post2 = {
     photoLink: "https://pp.userapi.com/c841536/v841536931/6ff1b/JJ17ZbMiAus.jpg",
     hashTags: ["#top", "#brilliant"],
     likes: ['svetabylly', 'alfa_di']
-};
+};*/
 var photoPost3 = {
     id: '13',
     descriprion: 'discription',
@@ -37,15 +37,10 @@ var photoPost3 = {
     likes: ['svetabylly', 'alfa_di']
 }
 
-for (let i = 0; i < 12; i++) {
-    let object2 = Object.assign({}, photoPost);
-    object2.id = i.toString();
-    photoPosts.push(object2);
-}
 
 window.module = (function () {
     return {
-        
+
         getPhotoPosts: function (skip = 0, top = 10, filterConfig) {
             var resultOfFilter = photoPosts;
             if (typeof(skip) !== 'number' || typeof(top) !== 'number') {
@@ -134,7 +129,7 @@ window.module = (function () {
     }
 })();
 
-console.log('All photoPosts:');
+/*console.log('All photoPosts:');
 console.log(module.getPhotoPosts(0, 12));
 console.log("filter by author: ");
 console.log(module.getPhotoPosts(0, 12, {author: 'Иванов Иван'}));
@@ -204,4 +199,4 @@ console.log(module.removePhotoPost("1"));
 console.log("remove id = 16");
 console.log(module.removePhotoPost("16"));
 console.log("Posts after that:");
-console.log(module.getPhotoPosts(0, 15));
+console.log(module.getPhotoPosts(0, 15));*/

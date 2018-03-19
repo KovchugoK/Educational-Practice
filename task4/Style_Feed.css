@@ -121,7 +121,8 @@ wrapper {
 }
 
 .IMAge {
-     background-color: #fff;
+    max-height: 410px;
+    background-color: #fff;
     border: 2px solid black;
     margin: 2vh auto;
     display: grid;
@@ -248,7 +249,7 @@ wrapper {
     display: grid;
     padding: 2px;
     font-family: "Brush Script MT";
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .datearea {

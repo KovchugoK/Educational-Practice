@@ -1,53 +1,56 @@
 window.Dom = (function () {
     let user = 'Иванов Иван';
-    var feed = document.getElementsByClassName('.feed');
+    var feed = document.getElementsByClassName('feed')[0];
     return {
+
         createImg: function (photoPost) {
             let divt = document.createElement('div');
             divt.id = photoPost.id;
-            divt.className = 'IMAge';
+            divt.classList.add('IMAge');
             let editarea = document.createElement('div');
-            editarea.className = 'editarea';
+            editarea.classList.add('editarea');
             divt.appendChild(editarea);
             let usermainphoto =  document.createElement('div')
-            usermainphoto.className = 'usermainphoto';
+            usermainphoto.classList.add('usermainphoto');
+            editarea.appendChild(usermainphoto);
             let username =  document.createElement('div')
-            username.className = 'username';
+            username.classList.add('username');
             username.innerHTML = photoPost.author;
-            editarea.parentNode.appendChild(username);
-            editarea.parentNode.appendChild(document.createElement('div'));
+            editarea.appendChild(username);
+            editarea.appendChild(document.createElement('div'));
             let button_edit =  document.createElement('div')
-            button_edit.className = 'button-edit';
-            editarea.parentNode.appendChild(button_edit);
+            button_edit.classList.add('button-edit');
+            editarea.appendChild(button_edit);
             let delete_button =  document.createElement('div')
-            delete_button.className = 'delete-button';
-            editarea.parentNode.appendChild(delete_button);
+            delete_button.classList.add('delete-button');
+            editarea.appendChild(delete_button);
             
             let photoarea = document.createElement('div');
-            photoarea.className = 'photoarea';
+            photoarea.classList.add('photoarea');
             photoarea.style.background = 'url(' + photoPost.photoLink + ')';
+            photoarea.style.backgroundSize = "cover";
             divt.appendChild(photoarea);
 
             let likearea = document.createElement('div');
-            likearea.className = 'likearea';
+            likearea.classList.add('likearea');
             divt.appendChild(likearea);
             let like_button = document.createElement('div');
-            like_button.className = 'like-button';
-            likearea.parentNode.appendChild(like_button);
+            like_button.classList.add( 'like-button');
+            likearea.appendChild(like_button);
             let num_of_likes = document.createElement('div');
-            num_of_likes.className = 'num-of-likes';
-            likearea.parentNode.appendChild(num_of_likes);
+            num_of_likes.classList.add('num-of-likes');
+            likearea.appendChild(num_of_likes);
 
             let commetarea = document.createElement('div');
-            commetarea.className = 'commetarea';
+            commetarea.classList.add('commetarea');
             divt.appendChild(commetarea);
             let commet = document.createElement('div');
-            commet.className = 'commet';
+            commet.classList.add( 'commet');
             commet.innerHTML = photoPost.author + ": " + photoPost.description + " " + photoPost.hashTags;
-            commetarea.parentNode.appendChild(commet);
+            commetarea.appendChild(commet);
 
             let datearea = document.createElement('div');
-            datearea.className = 'datearea';
+            datearea.classList.add('datearea');
             datearea.innerHTML = photoPost.createdAt.getDay() + '.'
                 + photoPost.createdAt.getMonth() + '.'
                 + photoPost.createdAt.getFullYear();
@@ -79,12 +82,13 @@ window.Dom = (function () {
             return false;
         },
 
-        displayPhotoPosts: function (skip = 0, top = 10, filterConfig) {
+       /* displayPhotoPosts: function (skip = 0, top = 10, filterConfig) {
            var posts = module.getPhotoPosts(skip, top, filterConfig);
+           console.log(posts);
             posts.forEach(element => {
-                feed.appendChild(createImg(element))
+                feed.appendChild(this.createImg(element))
             })
-        },
+        },*/
     }
 })();
 
@@ -97,16 +101,17 @@ var post1 = {
     hashTags: ["#top", "#brilliant"],
     likes: ['svetabylly', 'alfa_di']
 };
+
 var post2 = {
     id: "14",
     description: "discription",
     createdAt: new Date('2018-02-23T23:00:00'),
-    author: 'Иванов Иван',
-    photoLink: "https://pp.userapi.com/c841536/v841536931/6ff1b/JJ17ZbMiAus.jpg",
+    author: 'Alpha',
+    photoLink: "https://img04.rl0.ru/e1aa03029e240e3e6b12450baad6ddf4/c615x400/news.rambler.ru/img/2018/01/18131123.875643.8703.jpeg",
     hashTags: ["#top", "#brilliant"],
-    likes: ['svetabylly', 'alfa_di']
+    likes: ['love', 'alfa_di']
 };
+
 
 Dom.addPost(post1);
 Dom.addPost(post2);
-//Dom.displayPhotoPosts();
