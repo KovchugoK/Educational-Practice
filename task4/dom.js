@@ -82,13 +82,7 @@ window.Dom = (function () {
             return false;
         },
 
-       /* displayPhotoPosts: function (skip = 0, top = 10, filterConfig) {
-           var posts = module.getPhotoPosts(skip, top, filterConfig);
-           console.log(posts);
-            posts.forEach(element => {
-                feed.appendChild(this.createImg(element))
-            })
-        },*/
+     
     }
 })();
 
