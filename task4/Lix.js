@@ -43,8 +43,9 @@ for (let i = 0; i < 12; i++) {
     photoPosts.push(object2);
 }
 
-var module = (function () {
+window.module = (function () {
     return {
+        
         getPhotoPosts: function (skip = 0, top = 10, filterConfig) {
             var resultOfFilter = photoPosts;
             if (typeof(skip) !== 'number' || typeof(top) !== 'number') {
